@@ -1,0 +1,22 @@
+ Reflection API可以使JAVA代码动态的查询和操作正在运行的JAVA类或者接口。Reflection 包含许多的类，例如Method类，该类可以在java.lang.reflect包中找到。
+使用Reflection 中的类需要三个步骤：
+1．获取一个要操作的类的对象，该对象属于java.lang.object包，该对象代表一个正在运行的一个类或接口。下面的三个方法是常用的获取类对象的方法：
+(1) Class c=Class.forname(“java.lang.String”);
+使用.forname方法加载一个类，这里是字符串类，从而获得一个与该类对应的类对象。
+(2) Class c=int.class;
+(3) Class c=Integer.TYPE;
+2．获取要操纵的类对象的已经声明的方法
+获取类对象的方法的最简单和常用的方法是getDeclareMethods()方法。该方法返回类对象中声明过的所有方法的一个方法数组(Method[])。
+还有其他的方法，在后面会有所介绍。
+
+java.lang.reflect包中包含有两个接口，八个类。
+InvocationHandler接口：
+Member接口：该接口可以获取有关类成员（域或者方法）后者构造函数的信息。
+AccessibleObject类：该类是域(field)对象、方法(method)对象、构造函数(constructor)对象的基础类。
+Array类：该类提供动态地生成和访问JAVA数组的方法。
+Constructor类：提供一个类的构造函数的信息以及访问类的构造函数的接口。
+Field类：提供一个类的域的信息以及访问类的域的接口。
+Method类：提供一个类的方法的信息以及访问类的方法的接口。
+Modifier类：
+Proxy类：提供动态地生成代理类和类实例的静态方法。
+ReflectionPermission类：

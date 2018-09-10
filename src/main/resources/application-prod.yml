@@ -1,0 +1,26 @@
+spring:
+   datasource:
+       url: jdbc:postgresql://localhost:5432/userservice?characterEncoding=utf-8
+       username: postgres
+       password: 0000oooo
+       tomcat:
+         max-wait: 60000
+       timeBetweenEvictionRunsMillis: 60000
+       minEvictableIdleTimeMillis: 30000
+       validationQuery: SELECT 1
+       testWhileIdle: true
+       testOnBorrow: false
+       testOnReturn: false
+       driver-class-name: org.postgresql.Driver
+   jpa:
+     properties:
+          hibernate:
+#              dialect:  com.example.demo.config.JSONBPostgreSQLDialect
+              temp:
+                use_jdbc_metadata_defaults: false
+     show-sql: true
+     hibernate:
+       ddl-auto: validate # 当前自动验证表      --update-- 自动创建表
+
+
+

@@ -1,0 +1,13 @@
+ StrongReference
+我们都知道 JVM 中对象是被分配在堆（heap）上的，当程序行动中不再有引用指向这个对象时，
+这个对象就可以被垃圾回收器所回收。这里所说的引用也就是我们一般意义上申明的对象类型的变量（如 String, Object, ArrayList 等）
+，区别于原始数据类型的变量（如 int, short, long 等）也称为强引用。
+
+StrongReference 	抛出异常 	见清单 6 	Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+SoftReference 	不抛异常，之前的引用自动清空并返回 null 	见清单 7 	null
+WeakReference 	同上 	见清单 8 	null
+PhantomReference 	抛出异常 	见清单 9 	Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+
+
+
+

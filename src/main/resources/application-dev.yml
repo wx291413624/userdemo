@@ -1,0 +1,57 @@
+spring:
+   datasource:
+       url: jdbc:postgresql://localhost:5432/userservice?characterEncoding=utf-8
+       username: postgres
+       password: 0000oooo
+       tomcat:
+         max-wait: 60000
+       timeBetweenEvictionRunsMillis: 60000
+       minEvictableIdleTimeMillis: 30000
+       validationQuery: SELECT 1
+       testWhileIdle: true
+       testOnBorrow: false
+       testOnReturn: false
+       driver-class-name: org.postgresql.Driver
+   jpa:
+     properties:
+          hibernate:
+#              dialect:  com.example.demo.config.JSONBPostgreSQLDialect
+              temp:
+                use_jdbc_metadata_defaults: false
+     show-sql: true
+     hibernate:
+       ddl-auto: validate # 当前自动验证表      --update-- 自动创建表
+   redis:
+     host: localhost
+     password:
+     database: 5
+     port: 6379
+     jedis:
+       pool:
+         max-idle: 16
+         min-idle: 8
+         max-active: 200
+         max-wait: 20
+   application:
+     name: testuserdemo
+token:
+    userTimeout:  86400
+    adminTimeout:  86400
+server:
+  port: 8493
+
+wechat:
+   token: "123"
+   appid: "123"
+   appkey: "123"
+   authurl: "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx071b870c043bdaf2&redirect_uri=http://shop.xiongmaoxingchu.com/wechatopen-0.0.1-SNAPSHOT/index&response_type=code&scope=snsapi_base&state=test#wechat_redirect"
+   appsecreet: "123"
+   url: "123"
+   encodingaeskey: "123"
+   accessToken: ""
+   jsapi: ""
+
+
+
+
+

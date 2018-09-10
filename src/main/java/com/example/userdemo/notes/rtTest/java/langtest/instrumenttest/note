@@ -1,0 +1,21 @@
+instrument
+
+通过java instrument 实现一个简单的profiler。当然instrument并不限于profiler，instrument可以做很多事情，
+它类似一种更低级，更松耦合的AOP，可以从底层来改变一个类的行为，你可以由此产生无限的遐想。
+
+接下来要做的事情，就是计算一个方法所花的时间，通常我们会在代码这么写：
+在方法开始开头加入long stime = System.nanoTime();
+在方法结尾通过System.nanoTime()-stime得出方法所花时间，
+
+java Instrumentation指的是可以用独立于应用程序之外的代理（agent）
+程序来监测和协助运行在JVM上的应用程序。这种监测和协助包括但不限于获取JVM运行时状态，替换和修改类定义等。
+
+
+可以在启动名为java_app_name的应用之前启动一个agent_jar_path指定位置的agent jar。 实现这样一个agent jar包，必须满足两个条件：
+    在这个jar包的manifest文件中包含Premain-Class属性，并且改属性的值为代理类全路径名。
+    代理类必须提供一个public static void premain(String args, Instrumentation inst)或 public static void premain(String args) 方法。
+
+    我们还需要将这个类打成jar包命名为MyClassFileTransformer.jar，
+    我将这个jar放到D:/workspace/agentDemo1/agentDemo1/WebContent/WEB-INF/lib/下。
+    很重要的一点是修改jar包里面的MANIFEST.MF文件，在文件中加入Premain-Class: MyClassFileTransformer.jar。
+    在运行main方法时配置-javaagent:D:/workspace/agentDemo1/agentDemo1/WebContent/WEB-INF/lib/MyClassFileTransformer.jar

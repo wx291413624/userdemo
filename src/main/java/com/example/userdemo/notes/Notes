@@ -1,0 +1,16 @@
+
+Jre库包含的jar文件 ：
+
+charsets.jar：Java 字符集，这个类库中包含 Java 所有支持字符集的字符
+
+
+resources.jar：资源包（图片、properties文件）；
+rt.jar：运行时包；
+jsse.jar： Java 安全套接字扩展类库，用于实现加密的 Socket 连接
+jce.jar：Java 加密扩展类库，含有很多非对称加密算法在里面，但也是可扩展的。
+
+dnsns.jar：与 DNS 有关
+localedata.jar：本地机器语言的数据，比如日期在使用中文时，显示的是“星期四”之类的
+sunjce_provider.jar：为JCE 提供的加密安全套件
+sunmscapi.jar：
+sunpkcs11.jar： PKCS#11 证书工具
